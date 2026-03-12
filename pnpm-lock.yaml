@@ -227,6 +227,12 @@ importers:
 
   packages/typescript-config:
     devDependencies:
+      '@mindorbit/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@mindorbit/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
       typescript:
         specifier: 'catalog:'
         version: 5.9.3

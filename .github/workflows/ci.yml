@@ -6,27 +6,46 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
 jobs:
-  build:
-    name: Build, Lint, and Typecheck
+  ci:
+    name: Lint, Typecheck, and Build
+    timeout-minutes: 15
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
         run: pnpm lint
 
       - name: Format Check
-        run: pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,md,css}"
+        run: pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,md,css}" --ignore-path "**/{node_modules,.turbo,dist,.output}/**"
 
       - name: Typecheck
         run: pnpm typecheck

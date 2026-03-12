@@ -16,6 +16,8 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@mindorbit/eslint-config": "workspace:*",
+    "@mindorbit/prettier-config": "workspace:*",
     "typescript": "catalog:"
   }
 }
