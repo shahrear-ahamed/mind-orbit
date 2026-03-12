@@ -186,6 +186,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.39.3(jiti@2.6.1)
+      lint-staged:
+        specifier: ^15.4.3
+        version: 15.5.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -291,6 +294,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.39.3(jiti@2.6.1)
+      lint-staged:
+        specifier: ^15.4.3
+        version: 15.5.2
       tailwindcss:
         specifier: 'catalog:'
         version: 4.2.1

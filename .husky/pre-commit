@@ -1,2 +1,2 @@
-# Decentralized: run checks in packages instead or use turbo
-# pnpm lint-staged
+# Decentralized: will run package-specific rules if they exist
+pnpm lint-staged
