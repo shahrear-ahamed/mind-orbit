@@ -11,10 +11,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "lint": "eslint .",
-    "format": "prettier --write ."
-  },
   "devDependencies": {
     "@mindorbit/eslint-config": "workspace:*",
     "@mindorbit/prettier-config": "workspace:*",

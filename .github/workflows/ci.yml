@@ -45,7 +45,7 @@ jobs:
         run: pnpm lint
 
       - name: Format Check
-        run: pnpm exec prettier --check "**/*.{js,jsx,ts,tsx,json,md,css}" --ignore-path "**/{node_modules,.turbo,dist,.output}/**"
+        run: pnpm format
 
       - name: Typecheck
         run: pnpm typecheck
