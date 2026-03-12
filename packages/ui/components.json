@@ -11,13 +11,15 @@
   },
   "iconLibrary": "hugeicons",
   "aliases": {
-    "components": "@workspace/ui/components",
-    "utils": "@workspace/ui/lib/utils",
-    "hooks": "@workspace/ui/hooks",
-    "lib": "@workspace/ui/lib",
-    "ui": "@workspace/ui/components"
+    "components": "@mindorbit/ui/components",
+    "utils": "@mindorbit/ui/lib/utils",
+    "hooks": "@mindorbit/ui/hooks",
+    "lib": "@mindorbit/ui/lib",
+    "ui": "@mindorbit/ui/components"
   },
   "rtl": false,
   "menuColor": "default-translucent",
   "menuAccent": "subtle"
 }
+
+
