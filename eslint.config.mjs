@@ -1,6 +1,7 @@
-import eslint from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
-import tseslint from "typescript-eslint";
+import eslint from "@eslint/js"
+import { tanstackConfig } from "@tanstack/eslint-config"
+import eslintConfigPrettier from "eslint-config-prettier"
+import tseslint from "typescript-eslint"
 
 export default tseslint.config(
   {
@@ -11,11 +12,31 @@ export default tseslint.config(
       "**/node_modules/**",
       "**/*.gen.ts",
       "**/_generated/**",
+      "**/routeTree.gen.ts",
+      "**/.output/**",
+      "**/.nitro/**",
+      "**/.tanstack/**",
     ],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
+  ...tanstackConfig,
   eslintConfigPrettier,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: null,
+        projectService: {
+          allowDefaultProject: [
+            "*.config.*",
+            "eslint.config.mjs",
+            "eslint.config.ts",
+          ],
+        },
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
@@ -26,4 +47,4 @@ export default tseslint.config(
       "no-undef": "off", // Handled by typescript
     },
   }
-);
+)

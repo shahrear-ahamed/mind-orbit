@@ -1,5 +1,3 @@
-//  @ts-check
+import rootConfig from "../../eslint.config.mjs"
 
-import { tanstackConfig } from "@tanstack/eslint-config"
-
-export default [...tanstackConfig]
+export default rootConfig

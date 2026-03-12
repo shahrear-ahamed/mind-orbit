@@ -9,6 +9,6 @@
     "strict": true,
     "outDir": "dist"
   },
-  "include": ["src", "turbo"],
+  "include": ["src", "turbo", "eslint.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
