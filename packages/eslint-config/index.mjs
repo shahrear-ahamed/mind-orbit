@@ -25,25 +25,16 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        project: null,
         projectService: {
-          allowDefaultProject: [
-            "*.config.*",
-            "eslint.config.mjs",
-            "eslint.config.ts",
-          ],
+          allowDefaultProject: ["*.config.*", "*.mjs", "*.js"],
         },
-        tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { argsIgnorePattern: "^_" },
-      ],
+      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
       "no-undef": "off", // Handled by typescript
     },
   }

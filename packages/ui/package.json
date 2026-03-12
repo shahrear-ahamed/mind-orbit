@@ -23,6 +23,9 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@mindorbit/eslint-config": "workspace:*",
+    "@mindorbit/prettier-config": "workspace:*",
+    "@mindorbit/typescript-config": "workspace:*",
     "@tailwindcss/vite": "catalog:",
     "@tanstack/eslint-config": "catalog:",
     "@turbo/gen": "^2.8.1",

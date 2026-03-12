@@ -26,6 +26,9 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
+    "@mindorbit/eslint-config": "workspace:*",
+    "@mindorbit/prettier-config": "workspace:*",
+    "@mindorbit/typescript-config": "workspace:*",
     "@tanstack/eslint-config": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",

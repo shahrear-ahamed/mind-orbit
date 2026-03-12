@@ -25,15 +25,6 @@
     "typescript": "catalog:",
     "typescript-eslint": "catalog:"
   },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*.{json,md,css}": [
-      "prettier --write"
-    ]
-  },
   "packageManager": "pnpm@9.0.6",
   "engines": {
     "node": ">=20"

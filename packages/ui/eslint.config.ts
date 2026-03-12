@@ -1,4 +1,13 @@
-// @ts-expect-error - Root config is .mjs and lacks declaration file
-import rootConfig from "../../eslint.config.mjs"
+import mindorbitConfig from "@mindorbit/eslint-config"
 
-export default rootConfig
+export default [
+  ...mindorbitConfig,
+  {
+    languageOptions: {
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+        project: null,
+      },
+    },
+  },
+]
